@@ -1,0 +1,51 @@
+{% block style %}
+    <link rel="stylesheet" src="assets/prestation.css">
+{% endblock %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PrestationController!{% endblock %}
+
+{% block body %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    body {
+        background-image: url("../image/fondcircuit.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .grille_presta {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+            grid-template-rows: auto;
+        }
+
+        .presta {
+            color: white;
+            text-align: center;
+            font-size: 175%;
+        }
+        .id {
+            color: red;
+            text-size: 150%;
+        }
+</style>
+
+<div class="example-wrapper">
+    <div class="grille_presta">
+        {% for presta in prestations %}
+            <div  class="presta"></div>
+            <div class="presta">
+                <p>{{presta.libelle}}<br>
+                {{presta.temps}}<br>
+                {{presta.prixA}} par Adulte<br>
+                {{presta.prixE}} par Enfant<br></p>
+                <br>
+                <p class="id">{{presta.id}}</p>
+            </div>
+        {% endfor %}
+        <div  class="presta"></div>
+    </div>
+</div>
+{% endblock %}
