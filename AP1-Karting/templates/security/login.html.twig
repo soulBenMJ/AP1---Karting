@@ -1,20 +1,27 @@
 {% block stylesheets %}
 <link href="assets/login.css" rel="stylesheet" />
 {% endblock %}
+
 {% extends 'base.html.twig' %}
+
 {% block title %}Log in!{% endblock %}
+
 {% block body %}
 <form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se Déconnecter</a>
-        </div>
-    {% endif %}
     <div class="containerl">
+        <div class="msg">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se Déconnecter</a>
+            </div>
+        {% endif %}
+        </div>
+    
+    
         <div class="titre">
             <h1 class="h3 mb-3 font-weight-normal">Connectez vous</h1>
         </div>
@@ -27,10 +34,10 @@
                 <label for="inputPassword">Mot de Passe</label>
                 <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
             </div>
-            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-        </div>
-        <div class="btn">
-            <button type="submit">Connexion</button>
+            <div class="btn">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button type="submit">Connexion</button>
+            </div>
         </div>
         <div class="bas">
             <p>Vous n'êtes pas inscrit ? Inscrivez-vous !</p>
