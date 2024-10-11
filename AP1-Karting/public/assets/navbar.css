@@ -1,0 +1,84 @@
+/* Reset CSS pour éliminer les marges et paddings par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {  
+    display: grid;
+    background-color: cornflowerblue;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 50% 50%;
+    gap: 0; 
+    grid-template-areas:
+        "Logo . . Nom . . ."
+        "Logo Acceuil Présentation Prestation Avis Contact .";
+}
+
+.nav-btn {
+    text-align: center;
+    border: none;
+    background-color: cornflowerblue;
+    font-size: 25px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
+.Logo > img { 
+    width: 120px;
+    height: 120px;
+}
+
+.Logo { 
+    grid-area: Logo;
+    justify-self: center; 
+    align-self: center;  
+}
+
+.Nom { 
+    justify-self: center; 
+    align-self: center; 
+    grid-area: Nom;
+}
+
+.Nom > h1 { 
+    color: gold;
+    font-size: 50px;
+}
+
+.Acceuil { 
+    grid-area: Acceuil;
+    justify-self: center; 
+    align-self: center;
+}
+
+.Présentation { 
+    grid-area: Présentation; 
+    justify-self: center; 
+    align-self: center;
+}
+
+.Prestation { 
+    grid-area: Prestation; 
+    justify-self: center; 
+    align-self: center;
+}
+
+.Avis { 
+    grid-area: Avis; 
+    justify-self: center; 
+    align-self: center;
+}
+
+.Contact { 
+    grid-area: Contact; 
+    justify-self: center; 
+    align-self: center;
+}
