@@ -14,10 +14,11 @@
         <div class="form-row">{{ form_row(registrationForm.email, {label: 'Login'}) }}</div>
         <div class="form-row">{{ form_row(registrationForm.plainPassword, {label: 'Mot de Passe'}) }}</div>
         <div class="form-row">{{ form_row(registrationForm.agreeTerms, {label: 'Accepter les Conditions'}) }}</div>
-        {{ form_end(registrationForm) }}
+        
     </div>
     <div class="btn">
         <button type="submit" class="b">S'inscrire</button>
     </div>
+    {{ form_end(registrationForm) }}
 </div>
 {% endblock %}
