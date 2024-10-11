@@ -1,0 +1,21 @@
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrer verticalement */
+    text-align: center;
+    font-size: 35px; 
+    background-color: #007BFF;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 20px; 
+    height: auto; /* Optionnel : vous pouvez définir une hauteur fixe si nécessaire */
+    margin: 0; /* Retirez les marges pour centrer correctement */
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}

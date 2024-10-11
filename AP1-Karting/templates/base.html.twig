@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel='stylesheet'href="assets\bootstrap.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <link href="assets/navbar.css" rel="stylesheet" />
+    <link href="assets/footer.css" rel="stylesheet" />
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+    {% endblock %}
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
-        {{include("navbar.html.twig")}}
-        {% block body %}{% endblock %}
-    </body>
+    {% block javascripts %}
+    {% endblock %}
+    <div class="container">
+        <div class="Logo">
+            <img src="image/vroum.png">
+        </div>
+        <div class="Nom">
+            <h1>Kart'on</h1>
+        </div>
+        <div class="Acceuil">
+            <a class="nav-btn" href="/">Accueil</a>
+        </div>
+        <div class="Présentation">
+            <a class="nav-btn">Présentation</a>
+        </div>
+        <div class="Prestation">
+            <a class="nav-btn">Prestation</a>
+        </div>
+        <div class="Avis">
+            <a class="nav-btn">Avis</a>
+        </div>
+        <div class="Contact">
+            <a class="nav-btn">Contact</a>
+        </div>
+    </div>
+</head>
+<body>
+    {% block body %}
+
+    {% endblock %}
+    
+</body>
 </html>
