@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PrestationModifController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <form>
+        <div>
+            <label>Nouvelle Image:</label>
+            <input type="text" name="img"/>
+        </div>
+        <div>
+            <label>Nouveau Nom du Circuit:</label>
+            <input type="text" name="nom"/>
+        </div>
+        <div>
+            <label>Nouveau Temps:</label>
+            <input type="text" name="tps"/>
+        </div>
+        <div>
+            <label>Nouveau Prix pour Adulte:</label>
+            <input type="text" name="pxA"/>
+        </div>
+        <div>
+            <label>Nouveau Prix pour Enfant:</label>
+            <input type="text" name="pxE"/>
+        </div>
+        <button>Valider</button>
+    </form>
+</div>
+{% endblock %}

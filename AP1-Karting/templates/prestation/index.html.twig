@@ -1,6 +1,3 @@
-{% block style %}
-    <link rel="stylesheet" src="assets/prestation.css">
-{% endblock %}
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello PrestationController!{% endblock %}
@@ -43,9 +40,11 @@
                 {{presta.prixE}} par Enfant<br></p>
                 <br>
                 <p class="id">{{presta.id}}</p>
+                <a href="{{path('app_prestation_modif')}}"><button style="font-size: 70%">Modifier</button><a>
             </div>
         {% endfor %}
         <div  class="presta"></div>
     </div>
+
 </div>
 {% endblock %}
