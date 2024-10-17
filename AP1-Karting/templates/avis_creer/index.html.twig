@@ -1,0 +1,12 @@
+{% block title %}Ajoutez un Avis{% endblock %}
+
+{% block body %}
+<div class="containerc">
+    <h1>Ajoutez vos Contacts</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <br>
+        <button type="submit">Envoyer</button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

@@ -28,6 +28,8 @@
 
 .nav-btn:hover {
     color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 5px;
     text-decoration: underline;
 }
 
@@ -50,6 +52,7 @@
 
 .Nom > h1 { 
     color: gold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     font-size: 50px;
 }
 
