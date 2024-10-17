@@ -1,0 +1,10 @@
+.grille_presta {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+    grid-template-rows: auto;
+}
+
+.presta {
+    background-color: aqua;
+    font-size: large;
+}
