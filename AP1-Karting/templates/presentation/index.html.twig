@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PresentationController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h3 style="color: pink">Des Karts pour toutes tailles et toutes morphologies sont disponibles !</h3>
+    <h3 style="color: pink">Des Snacks sont disponibles sur place pour seulement 2€50 !</h3>
+
+    {% for pres in prestts %}
+        <div class="pres">
+            <div class="image"></div>
+            <div class="texte">
+                <h3>{{pres.libelle}}</h3>
+                <p>{{pres.description}}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
