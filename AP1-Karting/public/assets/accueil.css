@@ -1,0 +1,10 @@
+.titre_style {
+    background-image: url("../image/grosvroomfond.jpg");
+    opacity: 0.5;
+    text-align: center;
+    color: white;
+}
+
+.test {
+    opacity: 2 !important;
+}

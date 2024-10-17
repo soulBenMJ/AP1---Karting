@@ -1,21 +1,33 @@
 {% extends 'base.html.twig' %}
 
+{% block head %}
 {% block title %}Hello AccueilController!{% endblock %}
+{% endblock %}
 
 {% block body %}
+<link rel="stylesheet" href="assets/accueil.css">
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/bsoul/OneDrive/Bureau/BTS/Annee2/AP/Git/AP1 - Karting/AP1-Karting/src/Controller/AccueilController.php</code></li>
-        <li>Your template at <code>C:/Users/bsoul/OneDrive/Bureau/BTS/Annee2/AP/Git/AP1 - Karting/AP1-Karting/templates/accueil/index.html.twig</code></li>
-    </ul>
+<div class="titre_style">
+    <h2 class="test">Bienvenue</h2>
+    <h2>Chez</h2>
+    <h1>KART'ON</h1>
+</div>
+<div>
+    Ici ce trouveras la localisation
+</div>
+<div>
+    <h4>Horaires :</h4>
+    {% for horaire in horaires %}
+        <p>
+            {{horaire.jour}} : 
+            {{horaire.heureDebut}} -
+            {{horaire.heureFin}}
+        </p>
+    {% endfor %}
 </div>
 <footer>
     <a class="footer-btn" href="/login" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Connexion</a>
