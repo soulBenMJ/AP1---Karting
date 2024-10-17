@@ -45,9 +45,11 @@
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ presta.id) }}">
                         <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
-                    <a href="{{path('app_prestation_modif')}}"><button style="font-size: 70%">Modifier</button><a>
+                    <form method="post" action="{{ path('app_prestation_modif', {'id': presta.id}) }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token('update' ~ presta.id) }}">
+                        <button type="submit" class="btn btn-danger">Modifier</button>
+                    </form>
                 {% endif %}
-                
             </div>
         {% endfor %}
         <div  class="presta"></div>

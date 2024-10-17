@@ -6,12 +6,10 @@
     <h1>Modifier la prestation</h1>
 
     {{ form_start(form) }}
-        {{ form_row(form.libelle) }}
-        {{ form_row(form.temps) }}
-        {{ form_row(form.prixA) }}
-        {{ form_row(form.prixE) }}
+        {{ form_row(form.heureDebut) }}
+        {{ form_row(form.heureFin) }}
         <button class="btn btn-primary">Modifier</button>
     {{ form_end(form) }}
 
-    <a href="{{ path('app_prestation') }}" class="btn btn-secondary">Retour à la liste des prestations</a>
+    <a href="{{ path('app_accueil') }}" class="btn btn-secondary">Retour à l'accueil</a>
 {% endblock %}

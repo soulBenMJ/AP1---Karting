@@ -19,6 +19,16 @@
                 <h3>{{pres.libelle}}</h3>
                 <p>{{pres.description}}</p>
             </div>
+            {% if is_granted('ROLE_ADMIN') %}
+                <form method="post" action="{{ path('app_presentation_suppression', {'id': pres.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette presentation ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ pres.id) }}">
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+                <form method="post" action="{{ path('app_presentation_modif', {'id': pres.id}) }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token('update' ~ pres.id) }}">
+                    <button type="submit" class="btn btn-danger">Modifier</button>
+                </form>
+            {% endif %}
         </div>
     {% endfor %}
 </div>

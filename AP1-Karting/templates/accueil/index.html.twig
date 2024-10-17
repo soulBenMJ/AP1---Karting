@@ -13,12 +13,15 @@
 
 
 <div class="titre_style">
-    <h2 class="test">Bienvenue</h2>
-    <h2 class="test">Chez</h2>
-    <h1 class="entre">KART'ON</h1>
+    <h2>Bienvenue</h2>
+    <h2>Chez</h2>
+    <h1 class="titre">KART'ON</h1>
 </div>
 <div>
-    Ici ce trouveras la localisation
+    Monsieur Karnel est un homme d'une grande bonté. Après avoir passé son enfance dans la richesse et l'opulence, il se rendi compte que 
+    son mode de vie n'était pas sain, ni pour lui, ni pour son entourage. Il decida alors à l'âge de 24 ans de donner plus de la moitié de 
+    sa fortune a une association d'aide a l'enfance et contre la pauvreté. Association a laquelle il donne encore la majorité des bénéfices 
+    de Kart'On quand il as fini de payer très généreusement ses employé(e)s.
 </div>
 <div>
     <h4>Horaires :</h4>
@@ -28,6 +31,10 @@
             {{horaire.heureDebut}} -
             {{horaire.heureFin}}
         </p>
+        <form method="post" action="{{ path('app_horaire_modif', {'id': horaire.id}) }}">
+            <input type="hidden" name="_token" value="{{ csrf_token('update' ~ horaire.id) }}">
+            <button type="submit" class="btn btn-danger">Modifier</button>
+        </form>
     {% endfor %}
 </div>
 <footer>
