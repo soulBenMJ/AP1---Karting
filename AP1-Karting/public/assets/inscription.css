@@ -21,13 +21,14 @@ html, body {
 }
 
 .inscription { 
+  color: aliceblue;
   padding-top: 50px;
   text-align: center;
   font-size: large;
   display: flex;
   justify-content: center;
   grid-area: inscription;
-  background-color: rgb(49, 54, 80);
+  background-color: rgba(26, 25, 25);
   border-radius: 10px;
 }
 
@@ -37,10 +38,28 @@ html, body {
 
 .btn { 
   grid-area: btn;
-  display: flex;
-  justify-content: center;
+  padding-top: 40px;
   align-items: center; 
+  vertical-align: top;
 }
+
+.btn button {
+    width: 100%;
+    padding: 15px; 
+    background-color: #EAC360;
+    color: #2c3e50;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn button:hover {
+    background-color: #d4a856;
+    transform: scale(1.05); 
+}
+
 
 .titre { 
   grid-area: titre;
