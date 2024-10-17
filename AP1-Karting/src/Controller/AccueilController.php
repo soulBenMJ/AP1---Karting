@@ -9,8 +9,8 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AccueilController extends AbstractController
 {
-    public function index(OuvertureRepository $ouvtr): Response
     #[Route('/', name: 'app_accueil')]
+    public function index(OuvertureRepository $ouvtr): Response
     {
         $horaires = $ouvtr->findAll();
 
