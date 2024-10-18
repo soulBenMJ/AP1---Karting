@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une prestation{% endblock %}
+
+{% block body %}
+    <h1>Modifier la prestation</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.libelle) }}
+        {{ form_row(form.temps) }}
+        {{ form_row(form.prixA) }}
+        {{ form_row(form.prixE) }}
+        <button class="btn btn-primary">Modifier</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_prestation') }}" class="btn btn-secondary">Retour à la liste des prestations</a>
+{% endblock %}

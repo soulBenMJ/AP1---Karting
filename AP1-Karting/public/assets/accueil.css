@@ -1,0 +1,36 @@
+body {
+    background-color: #24459d;
+}
+
+.titre_style {
+    background-image: url("../image/grosvroomfond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: black;
+    font-size: 150%;
+}
+
+.titre {
+    color: gold;
+}
+
+.texte {
+    padding: 3%;
+    font-size: larger;
+    color: beige;
+}
+
+.horaires {
+    color: beige;
+    font-size: large;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    text-align: center;
+    font-size: large;
+}
+  

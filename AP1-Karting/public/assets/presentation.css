@@ -1,0 +1,23 @@
+body {
+    background-color: #24459d;
+}
+
+h4 {
+    color: pink;
+}
+
+.pres {
+    padding: 2%;
+    color: beige;
+    margin-bottom: 2%;
+}
+
+.pres h3 {
+    margin-left: 5%;
+}
+
+button {
+    font-size: medium;
+    padding: 1%;
+    margin: 1%;
+}
