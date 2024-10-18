@@ -32,10 +32,12 @@
             {{horaire.heureDebut}} -
             {{horaire.heureFin}}
         </p>
-        <form class="form" method="post" action="{{ path('app_horaire_modif', {'id': horaire.id}) }}">
-            <input type="hidden" name="_token" value="{{ csrf_token('update' ~ horaire.id) }}">
-            <button type="submit">Modifier</button>
-        </form>
+        {% if is_granted('ROLE_ADMIN') %}
+            <form class="form" method="post" action="{{ path('app_horaire_modif', {'id': horaire.id}) }}">
+                <input type="hidden" name="_token" value="{{ csrf_token('update' ~ horaire.id) }}">
+                <button type="submit">Modifier</button>
+            </form>
+        {% endif %}
     {% endfor %}
 </div>
 <footer>
