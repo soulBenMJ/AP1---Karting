@@ -1,3 +1,7 @@
+body {
+    background-color: #24459d;
+}
+
 .grille_presta {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
@@ -5,6 +9,29 @@
 }
 
 .presta {
-    background-color: aqua;
     font-size: large;
+    color: white;
+    text-align: center;
+}
+
+#presta {
+    background-color: #24459d;
+}
+
+body {
+    background-image: url("../image/fondcircuit.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.id {
+    color: red;
+    font-size: 150%;
+}
+
+
+button {
+    font-size: medium;
+    padding: 1%;
+    margin: 1%;
 }
