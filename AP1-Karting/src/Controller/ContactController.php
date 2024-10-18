@@ -23,8 +23,6 @@ class ContactController extends AbstractController
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        $avisList = $entityManager->getRepository(Avis::class)->findAll();
-
         if ($form->isSubmitted() && $form->isValid()) {
             
             $email = $contact->getEmail();
@@ -41,12 +39,14 @@ class ContactController extends AbstractController
                 $entityManager->persist($contact);
                 $entityManager->flush();
 
-                return new Response('Données enregistrées');
+                return $this->redirectToRoute('accueil');
             }
         }
+        $contactList = $entityManager->getRepository(Contact::class)->findAll();
 
         return $this->render('contact/index.html.twig', [
             'form' => $form->createView(),
+            'contactList' => $contactList,
         ]);
     }
 }
