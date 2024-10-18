@@ -32,5 +32,8 @@
             {% endif %}
         </div>
     {% endfor %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_presentation_add') }}"><button>Ajouter une Présentation</button></a>
+    {% endif %}
 </div>
 {% endblock %}
