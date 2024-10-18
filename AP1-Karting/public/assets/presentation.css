@@ -1,5 +1,6 @@
 body {
     background-color: #24459d;
+    margin-bottom: 3%;
 }
 
 h4 {
@@ -20,4 +21,30 @@ button {
     font-size: medium;
     padding: 1%;
     margin: 1%;
+}
+
+.ajout {
+    background-color: gold;
+    font-style: unset;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: gold;
+    color: black;
+}
+
+.btn-secondary:hover {
+    background-color: #caac04;
+    transform: scale(1.05);
+}
+
+a.btn-secondary {
+    text-decoration: none;
 }

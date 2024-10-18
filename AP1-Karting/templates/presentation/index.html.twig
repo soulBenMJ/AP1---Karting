@@ -23,17 +23,17 @@
             {% if is_granted('ROLE_ADMIN') %}
                 <form method="post" action="{{ path('app_presentation_suppression', {'id': pres.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette presentation ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ pres.id) }}">
-                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                    <button type="submit" class="btn-danger">Supprimer</button>
                 </form>
                 <form method="post" action="{{ path('app_presentation_modif', {'id': pres.id}) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token('update' ~ pres.id) }}">
-                    <button type="submit" class="btn btn-danger">Modifier</button>
+                    <button type="submit" class="btn-danger">Modifier</button>
                 </form>
             {% endif %}
         </div>
     {% endfor %}
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_presentation_add') }}"><button>Ajouter une Présentation</button></a>
+        <a class="btn" href="{{ path('app_presentation_add') }}">Ajouter une Présentation</a>
     {% endif %}
 </div>
 <footer>

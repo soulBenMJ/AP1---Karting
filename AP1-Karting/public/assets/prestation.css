@@ -1,24 +1,4 @@
 body {
-    background-color: #24459d;
-}
-
-.grille_presta {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
-    grid-template-rows: auto;
-}
-
-.presta {
-    font-size: large;
-    color: white;
-    text-align: center;
-}
-
-#presta {
-    background-color: #24459d;
-}
-
-body {
     background-image: url("../image/fondcircuit.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,9 +9,75 @@ body {
     font-size: 150%;
 }
 
-
 button {
     font-size: medium;
     padding: 1%;
     margin: 1%;
+}
+
+.grille_presta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.presta {
+    background-color: #24459d;
+    color: beige;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#presta p {
+    font-size: large;
+}
+
+.presta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    background-color: gold;
+    color: #24459d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: pink;
+    transform: scale(1.05);
+}
+
+.presta p {
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .grille_presta {
+        grid-template-columns: 1fr;
+    }
+
+    .presta {
+        width: 100%;
+        height: auto;
+    }
 }

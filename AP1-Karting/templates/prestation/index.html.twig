@@ -12,30 +12,32 @@
 <div class="example-wrapper">
     <div class="grille_presta">
         {% for presta in prestations %}
-            <div  class="presta"></div>
-            <div class="presta" id="presta">
-                <p>{{presta.libelle}}<br>
-                {{presta.temps}}<br>
-                {{presta.prixA}} par Adulte<br>
-                {{presta.prixE}} par Enfant<br></p>
-                <br>
-                <p class="id">{{presta.id}}</p>
-                {% if is_granted('ROLE_ADMIN') %}
-                    <form method="post" action="{{ path('app_prestation_suppression', {'id': presta.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette prestation ?');">
-                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ presta.id) }}">
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
-                    <form method="post" action="{{ path('app_prestation_modif', {'id': presta.id}) }}">
-                        <input type="hidden" name="_token" value="{{ csrf_token('update' ~ presta.id) }}">
-                        <button type="submit" class="btn btn-danger">Modifier</button>
-                    </form>
-                {% endif %}
+            <div class="prestas">
+                <div class="presta" id="presta">
+                    <p>
+                        {{presta.libelle}}<br>
+                        {{presta.temps}}<br>
+                        {{presta.prixA}} par Adulte<br>
+                        {{presta.prixE}} par Enfant<br>
+                    </p>
+                    <br>
+                    <p class="id">{{presta.id}}</p>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <form method="post" action="{{ path('app_prestation_suppression', {'id': presta.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette prestation ?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ presta.id) }}">
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+                        <form method="post" action="{{ path('app_prestation_modif', {'id': presta.id}) }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token('update' ~ presta.id) }}">
+                            <button type="submit" class="btn btn-danger">Modifier</button>
+                        </form>
+                    {% endif %}
+                </div>
             </div>
-        <div  class="presta"></div>
         {% endfor %}
     </div>
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_prestation_add') }}"><button>Ajouter une Préstation</button></a>
+        <a href="{{ path('app_prestation_add') }}"><button class="btn">Ajouter une Préstation</button></a>
     {% endif %}
 
 </div>

@@ -27,7 +27,7 @@ class AvisCreerController extends AbstractController
             $entityManager->persist($avis);
             $entityManager->flush();
 
-            return $this->redirectToRoute('accueil');
+            return $this->redirectToRoute('app_accueil');
         }
 
         return $this->render('avis_creer/index.html.twig', [

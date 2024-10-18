@@ -1,15 +1,125 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Modifier une prestation{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-    <h1>Modifier la prestation</h1>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #24459d;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-    {{ form_start(form) }}
-        {{ form_row(form.heureDebut) }}
-        {{ form_row(form.heureFin) }}
-        <button class="btn btn-primary">Modifier</button>
-    {{ form_end(form) }}
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+            text-align: center;
+        }
 
-    <a href="{{ path('app_accueil') }}" class="btn btn-secondary">Retour à l'accueil</a>
+        h1 {
+            font-size: 2rem;
+            color: gold;
+            margin-bottom: 20px;
+        }
+
+        .boutons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-align: left;
+        }
+
+        .form-row input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-row input:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: scale(1.05);
+        }
+
+        a.btn-secondary {
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <div class="container">
+        <h1>Modifier l'horaire</h1>
+        <div class="boutons">
+            {{ form_start(form) }}
+                {{ form_row(form.heureDebut) }}
+                {{ form_row(form.heureFin) }}
+                <button class="btn btn-primary">Modifier</button>
+            {{ form_end(form) }}
+            <a href="{{ path('app_accueil') }}" class="btn btn-secondary">Retour à l'accueil</a>
+        </div>
+    </div>
 {% endblock %}

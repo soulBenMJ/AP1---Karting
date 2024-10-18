@@ -39,7 +39,7 @@ class ContactController extends AbstractController
                 $entityManager->persist($contact);
                 $entityManager->flush();
 
-                return $this->redirectToRoute('accueil');
+                return $this->redirectToRoute('app_accueil');
             }
         }
         $contactList = $entityManager->getRepository(Contact::class)->findAll();
