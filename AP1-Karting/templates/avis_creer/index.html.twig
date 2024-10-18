@@ -1,0 +1,75 @@
+{% block title %}{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body {
+            background-color: #24459d; 
+            font-family: Arial, sans-serif;
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+            margin: 0; 
+        }
+
+        .containerc {
+            background-color: white; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        h1 {
+            color: #EAC360;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            background-color: green;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-size: medium;
+            padding: 10px 20px; 
+            cursor: pointer; 
+        }
+
+        footer {
+            margin-top: auto; 
+            text-align: center; 
+            padding: 10px 0; 
+        }
+
+        .footer-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="containerc">
+        <h1>Donnez votre Avis</h1>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <br>
+            <button type="submit">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+    <footer>
+        <a class="footer-btn" href="/avis">Annuler</a>
+    </footer>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+        body {
+            background-color: #24459d; 
+            font-family: Arial, sans-serif;
+        }
+
+        .containerc {
+            background-color: white; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            color: #EAC360;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .avis-container {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .no-avis-message {
+            color: red;
+            text-align: center;
+        }
+
+        button{
+            background-color: red;
+            color: white;
+            font-size: small;
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Avis des utilisateurs</h1>
+
+    <div class="containerc">
+    {% for avis in avisList %}
+        <div class="avis-container">
+            <strong>Utilisateur :</strong> {{ avis.user.email }}<br>
+            <strong>Note :</strong> {{ avis.note }}/10<br>
+            <strong>Commentaire :</strong> {{ avis.texte }}<br>
+
+            {% if is_granted('ROLE_ADMIN') or avis.user == app.user %}
+                <form method="post" action="{{ path('avis_delete', {'id': avis.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet avis ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ avis.id) }}">
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+            {% endif %}
+        </div>
+    {% else %}
+        <p class="no-avis-message">Aucun avis n'a été trouvé.</p>
+    {% endfor %}
+</div>
+
+
+    <footer>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a class="footer-btn" href="/avis/creer">Laisser un Avis</a>
+        {% else %}
+            <a class="footer-btn" href="/login" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Connexion</a>
+        {% endif %}
+    </footer>
+{% endblock %}
